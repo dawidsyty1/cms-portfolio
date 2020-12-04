@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.8"
+
+[packages]
+django = ">=3.1.0"
+wagtail = ">=2.10.0"
+graphene-django = ">=2.0"
+
+[dev-packages]
