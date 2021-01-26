@@ -19,3 +19,8 @@ ADD . /app
 # Handle dependencies
 RUN pip install pipenv && \
     pipenv install
+
+RUN pipenv run python3 manage.py makemigrations
+RUN pipenv run python3 manage.py migrate
+RUN pipenv run python3 manage.py collectstatic --noinput
+RUN pipenv run uwsgi --ini /app/config/uwsgi/uwsgi.ini --http :8000

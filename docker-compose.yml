@@ -4,11 +4,24 @@ services:
   app:
     image: cms
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: ./config/uwsgi/init.sh
     environment:
       PYTHONUNBUFFERED: 1
       DJANGO_ENV: dev
     volumes:
       - .:/app
-    ports:
-      - 8000:8000
+    expose:
+      - "8000"
+#  nginx:
+#    image: nginx:1.15-alpine
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ./config/nginx:/etc/nginx/conf.d
+#      - ./config/certbot/conf:/etc/letsencrypt
+#      - ./config/certbot/www:/var/www/certbot
+#  certbot:
+#    image: certbot/certbot
+#    volumes:
+#      - ./config/certbot/conf:/etc/letsencrypt
+#      - ./config/certbot/www:/var/www/certbot
