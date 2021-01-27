@@ -10,16 +10,19 @@ services:
       DJANGO_ENV: dev
     volumes:
       - .:/app
-    expose:
-      - "8000"
+    ports:
+      - 8000:8000
 #  nginx:
-#    image: nginx:1.15-alpine
+#    image: nginx
 #    ports:
 #      - "80:80"
 #    volumes:
-#      - ./config/nginx:/etc/nginx/conf.d
+#      - ./log/nginx:/var/log/nginx
+#      - ./config/nginx/app.conf:/etc/nginx/conf.d
 #      - ./config/certbot/conf:/etc/letsencrypt
 #      - ./config/certbot/www:/var/www/certbot
+#    links:
+#      - app:app
 #  certbot:
 #    image: certbot/certbot
 #    volumes:

@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'pages',
     'search',
     'graphene_django',
-
+    'corsheaders',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-
+    'corsheaders.middleware.CorsMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
