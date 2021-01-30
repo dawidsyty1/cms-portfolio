@@ -162,6 +162,7 @@ WAGTAIL_SITE_NAME = "cms"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+CMS_URL = 'http://192.168.176.2:8000'
 
 GRAPHENE = {
     'SCHEMA': 'api.schema.schema',

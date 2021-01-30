@@ -17,7 +17,11 @@ class ItemsBlock(blocks.StreamBlock):
 
 
 class PortfolioPage(Page):
-    items = StreamField(ItemsBlock(), blank=True)
+    items = StreamField([
+        ('title', blocks.CharBlock()),
+        ('image', ImageChooserBlock(required=False)),
+        ('body', blocks.RichTextBlock(required=False)),
+    ], blank=True)
 
     seo = models.ForeignKey(
         Seo,

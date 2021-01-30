@@ -1,6 +1,5 @@
 from wagtail.core.fields import StreamField
 from graphene.types import Scalar
-
 from graphene_django.converter import convert_django_field
 
 
